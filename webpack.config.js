@@ -14,7 +14,7 @@ module.exports = {
     hot: true
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist'], {exclude: ['.gitignore']}),
     new HtmlWebpackPlugin({
       title: 'Output Management'
     }),

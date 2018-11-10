@@ -1,18 +1,13 @@
-import _ from 'lodash';
+import {cube} from './math.js';
 import './style.css';
-import Mugatu from './mugatu.png';
 
 
 function component() {
-  let element = document.createElement('div');
-
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  var myIcon = new Image();
-  myIcon.src = Mugatu;
-
-  element.appendChild(myIcon);
+  let element = document.createElement('pre');
+  element.innerHTML = [
+    'Hello webpack!',
+    '5 cubed is equal to ' + cube(5)
+  ].join('\n\n');
 
   return element;
 }

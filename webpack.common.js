@@ -4,15 +4,14 @@ const TSLintPlugin = require('tslint-webpack-plugin');
 const webpack = require('webpack');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const APP_PATH = path.resolve(__dirname, 'src');
 
 module.exports = {
   entry: {
-    app: APP_PATH
+    app: './src'
   },
   plugins: [
     new CleanWebpackPlugin(['dist'], {exclude: ['.gitignore']}),
-    new HtmlWebpackPlugin({inject: true, template: path.join(APP_PATH, 'index.html')}),
+    new HtmlWebpackPlugin({inject: true, template: path.join('./public/index.html')}),
     new TSLintPlugin({
       files: ['./src/**/*.{ts,tsx}']
     }),

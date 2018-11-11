@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'MyFont';
-  src: url('./fonts/Mona-Free.woff') format('woff');
+  src: url('../fonts/Mona-Free.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
@@ -8,6 +8,6 @@
 .hello {
   color: red;
   font-family: 'MyFont';
-  background: url('./mugatu.png');
+  background: url('../images/mugatu.png');
 
 }

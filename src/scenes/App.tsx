@@ -1,6 +1,6 @@
 import React from 'react';
-import { Counter } from './Counter';
-import { Hello } from './Hello';
+import { Counter } from '../components/Counter';
+import { Hello } from '../components/Hello';
 
 export const App = () => (
   <>

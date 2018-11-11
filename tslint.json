@@ -1,7 +1,8 @@
 {
   "defaultSeverity": "error",
   "extends": [
-    "tslint:recommended"
+    "tslint:latest",
+    "tslint-react"
   ],
   "jsRules": {},
   "rules": {
@@ -12,7 +13,8 @@
     "no-console": false,
     "one-line": false,
     "no-consecutive-blank-lines": false,
-    "curly": false
+    "curly": false,
+    "jsx-wrap-multiline": false
   },
   "rulesDirectory": []
 }

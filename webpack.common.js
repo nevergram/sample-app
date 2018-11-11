@@ -14,7 +14,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist'], {exclude: ['.gitignore']}),
     new HtmlWebpackPlugin({inject: true, template: path.join(APP_PATH, 'index.html')}),
     new TSLintPlugin({
-      files: ['./src/**/*.ts']
+      files: ['./src/**/*.{ts,tsx}']
     }),
     new webpack.DefinePlugin({
       'process.env': {

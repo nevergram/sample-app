@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const TSLintPlugin = require('tslint-webpack-plugin');
 const webpack = require('webpack');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -12,7 +13,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist'], {exclude: ['.gitignore']}),
     new HtmlWebpackPlugin({inject: true, template: path.join(APP_PATH, 'index.html')}),
-
+    new TSLintPlugin({
+      files: ['./src/**/*.ts']
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV)

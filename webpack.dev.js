@@ -1,6 +1,7 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -10,6 +11,7 @@ module.exports = merge(common, {
     hot: true
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new ForkTsCheckerWebpackPlugin(),
   ],
 });

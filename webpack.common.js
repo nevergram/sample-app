@@ -1,18 +1,18 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const APP_PATH = path.resolve(__dirname, 'src');
 
 module.exports = {
   entry: {
-    app: './src/index'
+    app: APP_PATH
   },
   plugins: [
     new CleanWebpackPlugin(['dist'], {exclude: ['.gitignore']}),
-    new HtmlWebpackPlugin({
-      title: 'Production'
-    }),
+    new HtmlWebpackPlugin({inject: true, template: path.join(APP_PATH, 'index.html')}),
+
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV)

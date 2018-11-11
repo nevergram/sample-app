@@ -1,4 +1,4 @@
-import {cube} from './math.js';
+import {cube} from './math';
 import './style.css';
 
 if (process.env.NODE_ENV !== 'production') {
@@ -9,7 +9,7 @@ function component() {
   let element = document.createElement('pre');
   element.innerHTML = [
     'Hello webpack!',
-    '5 cubed is equal to ' + cube(5)
+    '5 cubed is equal to:' + cube(5)
   ].join('\n\n');
 
   return element;
